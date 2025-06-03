@@ -1,5 +1,7 @@
 package com.campusfind.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +14,8 @@ public class Signupservice {
     @Autowired
     public Signuprepository signuprepository;
 
-    public Signup registeruser(Signup user){
-        return signuprepository.save(user);
+    public List<Signup> registeruser(List<Signup> user){
+        return signuprepository.saveAll(user);
     }
 
     public void deleteUser(Long id) {

@@ -1,5 +1,7 @@
 package com.campusfind.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,7 +27,7 @@ public class Signupcontroller {
 
     // POST: Register user
     @PostMapping("/register")
-    public ResponseEntity<String> register(@Valid @RequestBody Signup signup) {
+    public ResponseEntity<String> register(@Valid @RequestBody List<Signup> signup) {
         signupservice.registeruser(signup);
         return ResponseEntity.ok("User registered successfully!");
     }

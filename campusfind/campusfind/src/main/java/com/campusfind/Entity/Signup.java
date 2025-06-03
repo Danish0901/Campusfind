@@ -88,7 +88,7 @@ public class Signup implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptyList(); // No roles/authorities for now
+        return Collections.singletonList(() -> "AUTHENTICATED"); // ✅ fake but valid
     }
 
     @Override
