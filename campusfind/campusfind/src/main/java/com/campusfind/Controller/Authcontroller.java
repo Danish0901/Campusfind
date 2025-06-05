@@ -41,9 +41,9 @@ public class Authcontroller {
             return ResponseEntity.ok(response);
 
         } catch (AuthenticationException e) {
-        return new ResponseEntity<>(Map.of("error", "Invalid username or password"), HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>(Map.of("error", "Invalid username or password"), HttpStatus.UNAUTHORIZED);
         } catch (Exception e) {
-        return new ResponseEntity<>(Map.of("error", "Something went wrong"), HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+            return new ResponseEntity<>(Map.of("error", "Something went wrong"), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

@@ -30,7 +30,7 @@ public class SecurityConfig {
       @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http.csrf(Customizer -> Customizer.disable());
-        http.authorizeHttpRequests(request -> request.requestMatchers("/campusfind/register","/campusfind/login").permitAll().anyRequest().authenticated());
+        http.authorizeHttpRequests(request -> request.requestMatchers("/campusfind/register","/campusfind/login"/* "/campusfind/uploaditems"*/).permitAll().anyRequest().authenticated());
        http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
